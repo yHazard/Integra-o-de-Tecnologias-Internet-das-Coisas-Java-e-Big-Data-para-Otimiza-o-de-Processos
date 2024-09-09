@@ -13,12 +13,10 @@ public class DatabaseExample {
         PreparedStatement stmt = null;
         
         try {
-            // Conectar ao banco de dados
             conn = DriverManager.getConnection(url, user, password);
             String sql = "INSERT INTO temperature_readings (temperature, timestamp) VALUES (?, NOW())";
             stmt = conn.prepareStatement(sql);
             
-            // Simular a inserção de dados
             double temperature = 25.5;
             stmt.setDouble(1, temperature);
             
